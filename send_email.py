@@ -38,10 +38,10 @@ sender = data_array[0]
 smtpserver = data_array[1]
 
 # username for the SMTP authentication
-smtpusername = data_array[2]
+smtpusername = data_array[0]
 
 # password for the SMTP authentication
-smtppassword = data_array[3]
+smtppassword = data_array[2]
 
 # use TLS encryption for the connection
 usetls = True
