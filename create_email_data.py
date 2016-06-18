@@ -11,6 +11,11 @@ def main(message):
     #TODO: Random key generation
     key = 7T23C
 
+    #Speichern der Daten als .txt Datei
+    path = "C:\\Users\\Hartmut\\Desktop\\testDatei.txt"
+    file = open(path, "w")
+    file.write(emailData)
+    
     #Senden einer Email und bestätigen des Keys
     send_email.main("Bitte übertragen sie diesen Schlüssel in die Konsole:\n\n"+key)
     print("\nIhn wurde ein Schlüssel per E-Mail gesendet. Bitte bestätigen sie die Richtigkeit der angegebenen Daten indem sie den Schlüssel in die Konsole schreiben.")
@@ -19,14 +24,9 @@ def main(message):
             rightKey = true
         else:
             print("Der Schlüssel war leider falsch")
-    
-    #Speichern der Daten als .txt Datei
-    path = "C:\\Users\\Hartmut\\Desktop\\testDatei.txt"
-    file = open(path, "w")
-    file.write(emailData)
-    file.close()
-
+            
     print("Se haben Watch My Pi erfolgreich instaliert. Viel Spaß damit! :)")
+    return true
     
 if __name__ == '__main__':
   main()
