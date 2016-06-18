@@ -2,15 +2,15 @@ import psutil
 import Pids
 import Memory
 import send_email
-#import email
-#config values
+cpu_load_finish = 0
+cpu_loadinglevel = False
 while_loop = True
+
 while(while_loop):
 
-	cpu_load_warning = 10 #70   #value for cpu warning message
-	cpu_interval = 3      #intval for cpu_percant_reequest
-	cpu_loadinglevel = False
-	cpu_load_finish = 0
+	cpu_load_warning = 70 #70   #value for cpu warning message
+	cpu_interval = 6      #intval for cpu_percant_reequest
+	
 	def cpu_load():
 		count = psutil.cpu_count()
 		condition_cpu_loop = True
@@ -34,13 +34,16 @@ while(while_loop):
 
 
 	print(cpu_load())
-	if (cpu_load_finish >= 80) & (cpu_loadinglevel == False):
+	#print("test1" + str(cpu_load_finish))
+	if (cpu_load >= 80) & (cpu_loadinglevel == False):
 		#print(cpu_load + " foo")		
 		send_email.main("DANGER DANGER! Ihr Pi ist zu 80% ausgelastet - sofern sie es nicht willentlich tun, untersuchen sie ihn auf Schadsoftware.")
+		#print("test2")
 		cpu_loadinglevel = True
 	if (cpu_load_finish >= 95) & (cpu_loadinglevel == True):
 		#print(cpu_load + " foo")
-		send_email.main("DANGER DANGER DANGER! Ihr Pi ist bereits zu 95% ausgelastet, er wird sich bald abschalten! Sichern sie ihre Daten, sonst koennte es 			zu Datenverlusten kommen!") 
+		send_email.main("DANGER DANGER DANGER! Ihr Pi ist bereits zu 95% ausgelastet, er wird sich bald abschalten! Sichern sie ihre Daten, sonst koennte es 			zu Datenverlusten kommen!")
+		print("test")
 		cpu_loadinglevel = False
 		while_loop = False
 		break
