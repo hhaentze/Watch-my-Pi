@@ -12,9 +12,6 @@ def Pi(Core):
 	CPU = "CPU"
 	PID_name = "PID_name"
 	warn = False
-	#print (pids)
-	#Processes.append(pids)
-	#print(Processes)
 	
 	for pid in pids:
 		Process_int = Process_int + 1
@@ -55,7 +52,7 @@ def Pi(Core):
 				p = psutil.Process(int(Processes_D["PID"+str(i)]))
 				cpu1 = p.cpu_percent(interval=1)
 				cpu2 = cpu1 / int(Core)
-				print Core, " Core(s)"
+				print Core, " Core(s)" 
 				print Processes_D["PID"+str(i)], " ",cpu2 ,"percent of CPU  ", Processes_D["PID_name"+str(i)]  #Processes_D["CPU"+str(i)] 
 			except:
 				print Processes_D["PID"+str(i)], " ", Processes_D["CPU"+str(i)], " ", Processes_D["PID_name"+str(i)] 

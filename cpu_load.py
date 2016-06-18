@@ -1,5 +1,6 @@
 import psutil
 import Pids
+#import email
 #config values
 cpu_load_warning = 10 #70   #value for cpu warning message
 cpu_interval = 3      #intval for cpu_percant_reequest
