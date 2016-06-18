@@ -2,7 +2,7 @@ import psutil
 import sys
 import os
 
-def Pi(Core):
+def Pi(Core, cpu_load):
 	Process_int = 0
 	Processes = []
 	Processes_D = {}
@@ -21,7 +21,7 @@ def Pi(Core):
 			pid_name = p.name()
 			cpu = p.cpu_percent(interval=0.2) 
 			
-			if (cpu > 8) & (cpu < 19):
+			if (cpu > 5 * Core) & (cpu < 85 * Core):
 	
 				print pid, " ", cpu," " , pid_name
 				Processes.append(pid)
@@ -31,7 +31,11 @@ def Pi(Core):
 				PR1 = {PID:pid,CPU:cpu,PID_name:pid_name}
 				Processes_D.update(PR1)
 				draw = draw + 1
-			elif cpu >= (20):
+
+			elif (cpu <= 85 * Core) & (cpu_load >= 90):
+				continue				
+
+			elif cpu >= (85 * Core):
 				print pid, " ", cpu," " , pid_name
 				Processes.append(pid)
 				PID = "PID"+str(draw)
@@ -67,5 +71,8 @@ def Pi(Core):
 		print "kill..."
 		warn = False
 		return PID, " ", PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
+def Rescue(P):
+	
+
 		
 

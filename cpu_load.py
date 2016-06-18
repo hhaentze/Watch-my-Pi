@@ -5,7 +5,7 @@ import send_email
 #import email
 #config values
 while_loop = True
-while(True):
+while(while_loop):
 
 	cpu_load_warning = 10 #70   #value for cpu warning message
 	cpu_interval = 3      #intval for cpu_percant_reequest
@@ -24,7 +24,7 @@ while(True):
 			if(cpu_load > cpu_load_warning):
 				condition_cpu_loop = False
 				print("Warning Warning")
-				print Pids.Pi(count)  
+				print Pids.Pi(count, cpu_load_finish)  
 				return(cpu_load)
 			
 			
