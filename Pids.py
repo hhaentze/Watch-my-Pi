@@ -15,7 +15,7 @@ def Pi(Core):
 	#print (pids)
 	#Processes.append(pids)
 	#print(Processes)
-
+	
 	for pid in pids:
 		Process_int = Process_int + 1
 		print Process_int, " current", Processes
@@ -52,12 +52,13 @@ def Pi(Core):
 		print "total processes: ", Process_int
 		for i in range(0,draw):
 			try:
+				p = psutil.Process(int(Processes_D["PID"+str(i)]))
 				cpu1 = p.cpu_percent(interval=1)
-				cpu1 = cpu1 / Core
-				if cpu2 != 0.0:
-					print Processes_D["PID"+str(i)], " ", cpu1, " ", Processes_D["PID_name"+str(i)]  #Processes_D["CPU"+str(i)] 
+				cpu2 = cpu1 / int(Core)
+				print Core, " Core(s)"
+				print Processes_D["PID"+str(i)], " ",cpu2 ,"percent of CPU  ", Processes_D["PID_name"+str(i)]  #Processes_D["CPU"+str(i)] 
 			except:
-				print Processes_D["PID"+str(i)], " ", Processes_D["CPU"+str(i)], " ", Processes_D["PID_name"+str(i)]  #Processes_D["CPU"+str(i)] 
+				print Processes_D["PID"+str(i)], " ", Processes_D["CPU"+str(i)], " ", Processes_D["PID_name"+str(i)] 
 
 	else: 
 		print "WARNING! WARNING! System will be repaired..."
