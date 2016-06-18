@@ -1,7 +1,7 @@
 import psutil
-import Pids1
+import Pids
 #config values
-cpu_load_warning = 70   #value for cpu warning message
+cpu_load_warning = 10 #70   #value for cpu warning message
 cpu_interval = 3      #intval for cpu_percant_reequest
 
 
@@ -15,8 +15,8 @@ def cpu_load():
             if(cpu_load > cpu_load_warning):
                 condition_cpu_loop = False
                 print("Warning Warning")
-                Pids1.pid_load()
-                return(cpu_load)
+                Pids.Pi(2)
+                #return(cpu_load)
                 
 
 
