@@ -31,7 +31,7 @@ def Pi(Core):
 				PR1 = {PID:pid,CPU:cpu,PID_name:pid_name}
 				Processes_D.update(PR1)
 				draw = draw + 1
-			elif cpu >= 85:
+			elif cpu >= (85*Core):
 				print pid, " ", cpu," " , pid_name
 				Processes.append(pid)
 				PID = "PID"+str(draw)
@@ -61,5 +61,6 @@ def Pi(Core):
 				
 	else: 			
 		print "WARNING! WARNING! System will be repaired..."
+		PID.kill()
 		return PID, " ", PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
 

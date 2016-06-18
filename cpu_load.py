@@ -36,7 +36,7 @@ while(True):
 	print(cpu_load())
 	if (cpu_load_finish >= 80) & (cpu_loadinglevel == False):
 		#print(cpu_load + " foo")		
-		send_email.main("DANGER DANGER! Ihr Pi ist zu 85% ausgelastet - sofern sie es nicht willentlich tun, untersuchen sie ihn auf Schadsoftware.")
+		send_email.main("DANGER DANGER! Ihr Pi ist zu 80% ausgelastet - sofern sie es nicht willentlich tun, untersuchen sie ihn auf Schadsoftware.")
 		cpu_loadinglevel = True
 	if (cpu_load_finish >= 95) & (cpu_loadinglevel == True):
 		#print(cpu_load + " foo")
