@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#Das ist eine Testeingabe
+
 #
 # Creation:    16.08.2013
 # Last Update: 07.04.2015
@@ -17,13 +17,19 @@
 from email.mime.text import MIMEText
 import smtplib
 import sys
+import io
 
 ########################################
 # declaration of default mail settings #
 ########################################
-# String with requiered data
-data = 'PiSpyExtreme@gmail.com|smtp.gmail.com|PiSpyExtreme@gmail.com|JuHaOst16|Your Raspberry Pi can not work anymore. \n\n The world is no place for hardware NOOBS!!!'
-data_array = data.split("|")
+
+#Daten aus .txt Datei laden
+path = "/opt/watch-my-pi/Data.txt"
+emailData = "/opt/watch-my-pi/Data.txt"
+file = open(path, 'r')
+emailData = file.read()
+data_array = emailData.split("|")
+file.close()
 
 # mail address of the sender
 sender = data_array[0]
@@ -71,10 +77,11 @@ def sendmail(recipient,subject,content):
 ########################################
 # main function                        #
 ########################################
-def main():
+def main(message):
 
+  
   # call sendmail() and generate a new mail with specified subject and content
-  sendmail('harti.haentze@gmail.com','Raspberry Pi',data_array[4])
+  sendmail(data_array[0],'Raspberry Pi',message)
 
   # quit python script
   sys.exit(0)
