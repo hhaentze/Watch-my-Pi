@@ -53,11 +53,13 @@ def Pi(Core):
 				cpu1 = p.cpu_percent(interval=1)
 				cpu2 = cpu1 / int(Core)
 				print Core, " Core(s)" 
-				print Processes_D["PID"+str(i)], " ",cpu2 ,"percent of CPU  ", Processes_D["PID_name"+str(i)]  #Processes_D["CPU"+str(i)] 
+				#print Processes_D["PID"+str(i)], " ",cpu2 ,"percent of CPU  ", Processes_D["PID_name"+str(i)]  #Processes_D["CPU"+str(i)] 
+				return "%d | %d percent of CPU | %s" % (Processes_D["PID"+str(i)], cpu2, Processes_D["PID_name"+str(i)])
+				
 			except:
-				print Processes_D["PID"+str(i)], " ", Processes_D["CPU"+str(i)], " ", Processes_D["PID_name"+str(i)] 
-
-	else: 
+				return "%d | %d percent of CPU | %s" % (Processes_D["PID"+str(i)], Processes_D["CPU"+str(i)], Processes_D["PID_name"+str(i)])
+				
+	else: 			
 		print "WARNING! WARNING! System will be repaired..."
-		print PID, " ", PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
+		return PID, " ", PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
 

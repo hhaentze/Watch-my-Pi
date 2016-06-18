@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import psutil
 
 def Free_Space():
@@ -10,10 +9,10 @@ def Free_Space():
 		if draw == 1:
 			thing = float(thing) / 1024
 			#print thing
-			print "Noch", thing,"MB frei."
+			print "Noch %d MB frei" % (thing)
 			return thing		
 		draw = draw + 1
 	
 	
-print Free_Space()
+
 

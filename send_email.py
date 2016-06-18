@@ -24,8 +24,8 @@ import io
 ########################################
 
 #Daten aus .txt Datei laden
-path = "C:\\Users\\Hartmut\\Desktop\\EmailData.txt"
-emailData = ""
+path = "/opt/watch-my-pi/Data.txt"
+emailData = "/opt/watch-my-pi/Data.txt"
 file = open(path, 'r')
 emailData = file.read()
 data_array = emailData.split("|")
