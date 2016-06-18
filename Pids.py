@@ -1,5 +1,7 @@
 import psutil
 import sys
+import os
+from email import *
 
 Process_int = 0
 Processes = []
@@ -9,7 +11,7 @@ draw = 0
 PID = "PID"
 CPU = "CPU"
 PID_name = "PID_name"
-bool warn = False
+warn = False
 
 for pid in pids:
 	Process_int = Process_int + 1
@@ -52,6 +54,7 @@ if (warn != True):
 			print "process was not found anymore"
 else: 
 	print "WARNING! WARNING! System will be repaired..."
-	print PID, " " PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
+	print PID, " ", PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
+	
 	
 
