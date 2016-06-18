@@ -22,7 +22,9 @@ def cpu_load():
 		        condition_cpu_loop = False
 		        print("Warning Warning")
 		        print Pids.Pi(count)  
-		        #return(cpu_load)
+		        return(cpu_load)
+		else:
+			return(cpu_load)
 		
 		
 
