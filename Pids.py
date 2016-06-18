@@ -10,5 +10,5 @@ print (pids)
 for pid in pids:
 	p = psutil.Process(int(pid))
 	pid_name = p.name()
-	print pid, " ", pid_name
-
+	cpu = p.cpu_percent(interval=1.0)
+	print pid, " ", cpu," " , pid_name
