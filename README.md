@@ -41,6 +41,7 @@ $ pip install email
 
 ```
 
+git repository clonen oder herunterladen
 
 TestEmailData.txt unter /opt/watch-my-py/Data.txt speichern
 
