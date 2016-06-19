@@ -12,7 +12,7 @@ _What's Watch-my-Pi?_
 
 
 ###__Installation-Ubuntu/Debian__
-
+(works fine with python 2.7.9+)
 
 
 
