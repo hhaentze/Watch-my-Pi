@@ -1,8 +1,31 @@
-# Watch-my-Pi
-Monitoring Programm for Rasperry Pie
+#	Watch-my-Pi
+
+###__Was ist Watch-my-Pi?__
+
+_What's Watch-my-Pi?_
 
 
-packages: psutil,
+
+ __Es ist ein Monitoring Programm für den Rasperry Pi um ungewöhnliche Aktivitäten/Programme zu entdecken.__
+  
+ _It's a monitoring programm for the raspberry pi to detect unusual activities/programms._
+
+
+###__Installation-Ubuntu/Debian__
+(works fine with python 2.7.9+)
+
+
+
+```
+
+$ sudo apt-get install python-pip
+
+$ pip install psutil
+
+$ pip install email
+
+```
+
 
 TestEmailData.txt unter /opt/watch-my-py/Data.txt speichern
 
