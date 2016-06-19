@@ -1,4 +1,4 @@
-﻿﻿#	Watch-my-Pi	![alt tag](https://s3-us-west-2.amazonaws.com/hackdash/uploads/1466321477806.png)
+####	Watch-my-Pi	![alt tag](https://github.com/harti768/Watch-my-Pi/blob/master/RaspberryPie.png)
 
 ###__Was ist Watch-my-Pi?__
 
