@@ -12,7 +12,6 @@ _What's Watch-my-Pi?_
 
 
 ###__Installation-Ubuntu/Debian__
-    _instlattion-Ubuntu/Debian_
 
 
 
