@@ -22,12 +22,13 @@ import io
 ########################################
 # declaration of default mail settings #
 ########################################
-
 #Daten aus .txt Datei laden
 path = "/opt/watch-my-pi/Data.txt"
-emailData = "/opt/watch-my-pi/Data.txt"
+emailData = ""
 file = open(path, 'r')
 emailData = file.read()
+if(emailData == ""):
+  emailData ="a|b|c"
 data_array = emailData.split("|")
 file.close()
 
@@ -77,14 +78,54 @@ def sendmail(recipient,subject,content):
 ########################################
 # main function                        #
 ########################################
-def main(message):
-
-  
-  # call sendmail() and generate a new mail with specified subject and content
-  sendmail(data_array[0],'Raspberry Pi',message)
-
-  # quit python script
-  #sys.exit(0)
-
+def main(message,subject):
+    # call sendmail() and generate a new mail with specified subject and content
+    sendmail(data_array[0],subject,message)
+    
 if __name__ == '__main__':
   main()
+
+def init():
+  file = open(path, 'r')
+  emailData = file.read()
+  if(emailData == ""):
+    emailData ="a|b|c"
+  data_array = emailData.split("|")
+  file.close()
+
+  # mail address of the sender
+  sender = data_array[0]
+
+  # fqdn of the mail server
+  smtpserver = data_array[1]
+
+  # username for the SMTP authentication
+  smtpusername = data_array[0]
+
+  # password for the SMTP authentication
+  smtppassword = data_array[2]
+
+def testMail(sender,smtp,password,subject,content):
+
+  # generate a RFC 2822 message
+  msg = MIMEText(content)
+  msg['From'] = sender
+  msg['To'] = sender
+  msg['Subject'] = subject
+
+  # open SMTP connection
+  server = smtplib.SMTP(smtp,587)
+
+  # start TLS encryption
+  if usetls:
+    server.starttls()
+
+  # login with specified account
+  if smtpusername and smtppassword:
+    server.login(sender,password)
+
+  # send generated message
+  server.sendmail(sender,sender,msg.as_string())
+
+  # close SMTP connection
+  server.quit()
