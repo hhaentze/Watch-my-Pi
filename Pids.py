@@ -33,10 +33,8 @@ def Pi(Core, cpu_load):
 				PR1 = {PID:pid,CPU:cpu,PID_name:pid_name}
 				Processes_D.update(PR1)
 				draw = draw + 1
-
-		
 				
-			elif (cpu >= 85):
+			elif (cpu >= 85) :
 				print pid, " ", cpu," " , pid_name
 				Processes.append(pid)
 				PID = "PID"+str(draw)
@@ -46,6 +44,14 @@ def Pi(Core, cpu_load):
 				Processes_D.update(PR1)	
 				warn = True
 				break
+
+			#elif (cpu <= 85) & (int(cpu_load) > 95):
+			#	Processes.append(pid)
+			#	last_hope = True
+			#	warn = True
+			#	break
+					
+
 			else:
 				os.system('clear')
 		else:
@@ -66,12 +72,25 @@ def Pi(Core, cpu_load):
 				
 	elif (warn == True) & (last_hope != True): 			
 		print "WARNING! WARNING! System will be repaired..."
-		p.terminate()
-		print "terminate..."
-		p.kill()
-		print "kill..."
+		for pi in Processes:
+			pii = psutil.Process(int(pi))
+			pii.terminate()
+			print "terminate..."
+			pii.kill()
+			print "kill..."
 		warn = False
 		return "%s , %s could be a problem for you, and may could damage your PC! Please keep that in mind." % (Processes_D["PID"+str(draw)], Processes_D["PID_name"+str(draw)])
+
+	#elif (warn == True) & (last_hope == True):
+	#	for i in range(0, draw): 
+	#		p.terminate()
+	#		p.kill()
+	#	return "Wieder sauber"
+	#	warn = False
+	#	last_hope = False
+
+
+	
 
 
 
