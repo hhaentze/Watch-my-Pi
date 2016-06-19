@@ -1,4 +1,6 @@
-####	Watch-my-Pi	![alt tag](https://github.com/harti768/Watch-my-Pi/blob/master/RaspberryPie.png)
+####	Watch-my-Pi	!
+
+[alt tag](https://github.com/harti768/Watch-my-Pi/blob/master/RaspberryPie.png)
 
 ###__Was ist Watch-my-Pi?__
 
