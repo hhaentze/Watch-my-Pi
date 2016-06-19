@@ -71,16 +71,9 @@ def Pi(Core, cpu_load):
 		p.kill()
 		print "kill..."
 		warn = False
-		return PID, " ", PID_name, "could be a problem for you, and may could damage your PC! Please keep that in mind."
+		return "%s , %s could be a problem for you, and may could damage your PC! Please keep that in mind." % (Processes_D["PID"+str(draw)], Processes_D["PID_name"+str(draw)])
 
-	else:
-		Rescue(big_task)
-"""def Rescue(big_task):
-	for i in reversed(big_task)[:2]:
-		cpu, p in i		
-		p.terminate()
-		p.kill()
-	"""
+
 
 		
 

@@ -2,6 +2,8 @@ import psutil
 import Pids
 import Memory
 import send_email
+import os
+
 cpu_load_finish = 0
 cpu_loadinglevel = False
 while_loop = True
@@ -16,8 +18,9 @@ while(while_loop):
 		condition_cpu_loop = True
 		mem = Memory.Free_Space()
 		if mem < 200:
-			print "Achtung! Dein Speicher ist kleiner als 200 MB! Bitte sorge dafuer, dass mehr Speicher zur Verfuegung steht."
-		while (condition_cpu_loop):
+			print "Achtung, sehr wenig Speicher frei !"
+					
+		while (condition_cpu_loop == True):
 			cpu_load = psutil.cpu_percent(interval=cpu_interval)
 			print(cpu_load)
 			cpu_load_finish = cpu_load
@@ -27,22 +30,17 @@ while(while_loop):
 				print Pids.Pi(count, cpu_load_finish)  
 				return(cpu_load)
 			
-			
-			
-		
-		
-
 
 	print(cpu_load())
 	#print("test1" + str(cpu_load_finish))
 	if (cpu_load >= 80) & (cpu_loadinglevel == False):
 		#print(cpu_load + " foo")		
-		send_email.main("DANGER DANGER! Ihr Pi ist zu 80% ausgelastet - sofern sie es nicht willentlich tun, untersuchen sie ihn auf Schadsoftware.")
+		send_email.main("DANGER DANGER! Ihr Pi ist zu 80% ausgelastet - sofern sie es nicht willentlich tun, untersuchen sie ihn auf Schadsoftware.", "Danger!")
 		#print("test2")
 		cpu_loadinglevel = True
 	if (cpu_load_finish >= 95) & (cpu_loadinglevel == True):
 		#print(cpu_load + " foo")
-		send_email.main("DANGER DANGER DANGER! Ihr Pi ist bereits zu 95% ausgelastet, er wird sich bald abschalten! Sichern sie ihre Daten, sonst koennte es 			zu Datenverlusten kommen!")
+		send_email.main("DANGER DANGER DANGER! Ihr Pi ist bereits zu 95% ausgelastet, er wird sich bald abschalten! Sichern sie ihre Daten, sonst koennte es 			zu Datenverlusten kommen!", "Danger! Danger!")
 		print("test")
 		cpu_loadinglevel = False
 		while_loop = False
