@@ -1,7 +1,7 @@
-# Watch-my-Pi
-
+#	Watch-my-Pi
 
 ###__Was ist Watch-my-Pi?__
+
 _What's Watch-my-Pi?_
 
 
@@ -11,11 +11,11 @@ _What's Watch-my-Pi?_
  _It's a monitoring programm for the raspberry pi to detect unusual activities/programms._
 
 
-packages: psutil, email, pip
+###__Installation-Ubuntu/Debian__
+    _instlattion-Ubuntu/Debian_
 
 
 
-Commands:
 
 ```
 
