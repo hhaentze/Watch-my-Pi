@@ -43,6 +43,9 @@ $ pip install email
 
 git repository clonen oder herunterladen
 
-TestEmailData.txt unter /opt/watch-my-py/Data.txt speichern
+'''
+sudo ./test_installation.sh 
 
-cpu_load.py starten und los gehts!
+./CPU_load.sh
+'''
+
