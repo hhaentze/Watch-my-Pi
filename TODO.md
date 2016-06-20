@@ -1,4 +1,4 @@
-*better backround performace
--.config file
--Black- Whitelist
--detect factoring programms
+- better backround performace
+- .config file
+- Black- Whitelist
+- detect factoring programms
