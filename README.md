@@ -43,11 +43,11 @@ $ pip install email
 
 git repository clonen oder herunterladen
 
-'''
+```
 
-sudo ./test_installation.sh 
+$ sudo ./test_installation.sh 
 
-./CPU_load.sh
+$  ./CPU_load.sh
 
-'''
+```
 
