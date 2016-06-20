@@ -2,3 +2,5 @@
 - .config file
 - Black- Whitelist
 - detect factoring programms
+- autostart
+- installer
