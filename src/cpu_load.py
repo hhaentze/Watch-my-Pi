@@ -1,9 +1,16 @@
 import psutil
 import Pids
 import Memory
-import send_email
+
 import os
+import create_email_data
 from uuid import getnode as get_mac
+
+if (os.path.exists("/opt/Watch-my-Pi/src/Data.txt") != True):
+
+	create_email_data.main()
+	
+
 
 mac = get_mac()
 cpu_load_finish = 0
@@ -34,6 +41,10 @@ while(while_loop):
 			
 
 	print(cpu_load())
+	
+	import send_email
+	
+	
 	#print("test1" + str(cpu_load_finish))
 	if (cpu_load >= 80) & (cpu_loadinglevel == False):
 		#print(cpu_load + " foo")		

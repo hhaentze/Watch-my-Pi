@@ -23,7 +23,7 @@ import io
 # declaration of default mail settings #
 ########################################
 #Daten aus .txt Datei laden
-path = "/opt/Watch-my-Pi/src/TestEmailData.txt"
+path = "/opt/Watch-my-Pi/src/Data.txt"
 emailData = ""
 file = open(path, 'r')
 emailData = file.read()
@@ -51,7 +51,6 @@ usetls = True
 # function to send a mail              #
 ########################################
 def sendmail(recipient,subject,content):
-
   # generate a RFC 2822 message
   msg = MIMEText(content)
   msg['From'] = sender
@@ -86,6 +85,7 @@ if __name__ == '__main__':
   main()
 
 def init():
+  path = "/opt/Watch-my-Pi/src/Data.txt"
   file = open(path, 'r')
   emailData = file.read()
   if(emailData == ""):
