@@ -14,8 +14,7 @@
  Watch My Pi! soll sich auch durch seine Simpelheit auszeichen, welche jedem Verbraucher, ob Amateur, Profi, jung
  oder alt erlaubt ohne Probleme damit umzugehen. Eine einmalige Installation und Watch My Pi! muss nie wieder angerührt werden.  
 
- ~
- ~
+--
 
  Watch My Pi! is a monitoring programm for your Raspberry Pi which is able to scan the RAM and CPU to discover erroneous
  and dangerous programms which prevent your Raspberry from working like it is supposed to. The purpose is not finding viruses
@@ -49,5 +48,11 @@ $ sudo ./test_installation.sh
 
 $  ./CPU_load.sh
 
+$ chmod +x test_installation.sh 
+
+$ chmod +x CPU_load.sh
+
 ```
+
+
 
